@@ -14,8 +14,6 @@ function Intervalo(props) {
 
   const { min, max, nome } = props
 
-  console.log(nome)
-
   return (
     <Card title="Intervalo de Números" red>
       <div className="Intervalo">
@@ -46,8 +44,7 @@ function mapStateToProps(state) {
   return {
     //Chave definida no Store
     min: state.numeros.min,
-    max: state.numeros.max,
-    nome: state.nomes
+    max: state.numeros.max
   }
 }
 
