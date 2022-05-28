@@ -9,13 +9,27 @@ const reducers = combineReducers({
 
     //Do Intervalo
     numeros: function (state, action) {
-        //Deve retornar o próximo estado
-        return {
-            min: 0,
-            max: 100,
+
+        //Estabelece por qual tipo é definido
+        switch(action.type){
+            case 'NUM_MIN_ALTERADO':
+                return {
+                    ...state, min: action.payload
+                }
+            case 'NUM_MAX_ALTERADO':
+                return {
+                    ...state, max: action.payload
+                }
+            default:
+                return {
+                    min: 5,
+                    max: 35
+                }
         }
     },
     nomes: function (state, action) {
+        console.log('Reducer de nomes chamado')
+        console.log(state, '', action)
         return [
             'Ana', 'Lucas', 'Rogério'
         ]
